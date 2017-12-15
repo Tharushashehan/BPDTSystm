@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BPDTSysModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BPDTSys.dbo.Pro_Rata_Registration_Data' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Pro_Rata_Registration_Data">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Semester_Id" Type="nvarchar" MaxLength="100" />
+    <Property Name="Pro_Rata_Registration_Start_Date" Type="nvarchar" MaxLength="100" />
+    <Property Name="Pro_Rata_Registration_End_Date" Type="nvarchar" MaxLength="100" />
+    <Property Name="Pro_Rata_Fee" Type="nvarchar" MaxLength="100" />
+    <Property Name="Last_Payment_Date_From" Type="nvarchar" MaxLength="100" />
+    <Property Name="Last_Payment_Date_To" Type="nvarchar" MaxLength="100" />
+    <Property Name="Late_Payment_Fee" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date_Time" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BPDTSys.dbo.Pro_Rata_Registration_Subject_List' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Pro_Rata_Registration_Subject_List">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Pro_Rata_Registration_Id" Type="nvarchar" MaxLength="100" />
+    <Property Name="Allow_Subject_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date_Time" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BPDTSys.dbo.Regular_Registration_Data' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Regular_Registration_Data">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Semester_Id" Type="nvarchar" MaxLength="100" />
+    <Property Name="Semester_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Payment_Start_Date" Type="nvarchar" MaxLength="100" />
+    <Property Name="Payment_End_Date" Type="nvarchar" MaxLength="100" />
+    <Property Name="Semester_Start_Date" Type="nvarchar" MaxLength="100" />
+    <Property Name="Semester_End_Date" Type="nvarchar" MaxLength="100" />
+    <Property Name="Semester_Fee" Type="nvarchar" MaxLength="100" />
+    <Property Name="Late_Payment_Date_From" Type="nvarchar" MaxLength="100" />
+    <Property Name="Late_Payment_Date_To" Type="nvarchar" MaxLength="100" />
+    <Property Name="Late_Payment_Fee" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date_Time" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BPDTSys.dbo.Repeat_Registration_Data' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Repeat_Registration_Data">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Semester_Id" Type="nvarchar" MaxLength="100" />
+    <Property Name="Repeat_Registration_Start_Date" Type="nvarchar" MaxLength="100" />
+    <Property Name="Repeat_Registration_End_Date" Type="nvarchar" MaxLength="100" />
+    <Property Name="Repeat_Fee" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date_Time" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BPDTSys.dbo.Repeat_Registration_Subject_List' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Repeat_Registration_Subject_List">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Repeat_Registration_Id" Type="nvarchar" MaxLength="100" />
+    <Property Name="Allow_Subject_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date_Time" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'BPDTSys.dbo.Temp_Pro_Rata_Registration_Subject_List' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Temp_Pro_Rata_Registration_Subject_List">
+          <Property Name="Ref_No" Type="nvarchar" MaxLength="100" />
+          <Property Name="Allow_Subject_Name" Type="nvarchar" MaxLength="100" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'BPDTSys.dbo.Temp_Repeat_Registration_Subject_List' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Temp_Repeat_Registration_Subject_List">
+          <Property Name="Ref_No" Type="nvarchar" MaxLength="100" />
+          <Property Name="Allow_Subject_Name" Type="nvarchar" MaxLength="100" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BPDTSys.dbo.Users_List' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Users_List">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Index_No" Type="nvarchar" MaxLength="100" />
+    <Property Name="Student_Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Temp_Password" Type="nvarchar" MaxLength="100" />
+    <Property Name="Student_Type" Type="nvarchar" MaxLength="100" />
+    <Property Name="Course" Type="nvarchar" MaxLength="100" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Date_Time" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityContainer Name="BPDTSysModelStoreContainer">
+    <EntitySet Name="Pro_Rata_Registration_Data" EntityType="Self.Pro_Rata_Registration_Data" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Pro_Rata_Registration_Data].[ID] AS [ID], 
+    [Pro_Rata_Registration_Data].[Semester_Id] AS [Semester_Id], 
+    [Pro_Rata_Registration_Data].[Pro_Rata_Registration_Start_Date] AS [Pro_Rata_Registration_Start_Date], 
+    [Pro_Rata_Registration_Data].[Pro_Rata_Registration_End_Date] AS [Pro_Rata_Registration_End_Date], 
+    [Pro_Rata_Registration_Data].[Pro_Rata_Fee] AS [Pro_Rata_Fee], 
+    [Pro_Rata_Registration_Data].[Last_Payment_Date_From] AS [Last_Payment_Date_From], 
+    [Pro_Rata_Registration_Data].[Last_Payment_Date_To] AS [Last_Payment_Date_To], 
+    [Pro_Rata_Registration_Data].[Late_Payment_Fee] AS [Late_Payment_Fee], 
+    [Pro_Rata_Registration_Data].[Date_Time] AS [Date_Time], 
+    [Pro_Rata_Registration_Data].[Status] AS [Status]
+    FROM [dbo].[Pro_Rata_Registration_Data] AS [Pro_Rata_Registration_Data]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Pro_Rata_Registration_Subject_List" EntityType="Self.Pro_Rata_Registration_Subject_List" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Pro_Rata_Registration_Subject_List].[ID] AS [ID], 
+    [Pro_Rata_Registration_Subject_List].[Pro_Rata_Registration_Id] AS [Pro_Rata_Registration_Id], 
+    [Pro_Rata_Registration_Subject_List].[Allow_Subject_Name] AS [Allow_Subject_Name], 
+    [Pro_Rata_Registration_Subject_List].[Date_Time] AS [Date_Time], 
+    [Pro_Rata_Registration_Subject_List].[Status] AS [Status]
+    FROM [dbo].[Pro_Rata_Registration_Subject_List] AS [Pro_Rata_Registration_Subject_List]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Regular_Registration_Data" EntityType="Self.Regular_Registration_Data" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Regular_Registration_Data].[ID] AS [ID], 
+    [Regular_Registration_Data].[Semester_Id] AS [Semester_Id], 
+    [Regular_Registration_Data].[Semester_Name] AS [Semester_Name], 
+    [Regular_Registration_Data].[Payment_Start_Date] AS [Payment_Start_Date], 
+    [Regular_Registration_Data].[Payment_End_Date] AS [Payment_End_Date], 
+    [Regular_Registration_Data].[Semester_Start_Date] AS [Semester_Start_Date], 
+    [Regular_Registration_Data].[Semester_End_Date] AS [Semester_End_Date], 
+    [Regular_Registration_Data].[Semester_Fee] AS [Semester_Fee], 
+    [Regular_Registration_Data].[Late_Payment_Date_From] AS [Late_Payment_Date_From], 
+    [Regular_Registration_Data].[Late_Payment_Date_To] AS [Late_Payment_Date_To], 
+    [Regular_Registration_Data].[Late_Payment_Fee] AS [Late_Payment_Fee], 
+    [Regular_Registration_Data].[Date_Time] AS [Date_Time], 
+    [Regular_Registration_Data].[Status] AS [Status]
+    FROM [dbo].[Regular_Registration_Data] AS [Regular_Registration_Data]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Repeat_Registration_Data" EntityType="Self.Repeat_Registration_Data" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Repeat_Registration_Data].[ID] AS [ID], 
+    [Repeat_Registration_Data].[Semester_Id] AS [Semester_Id], 
+    [Repeat_Registration_Data].[Repeat_Registration_Start_Date] AS [Repeat_Registration_Start_Date], 
+    [Repeat_Registration_Data].[Repeat_Registration_End_Date] AS [Repeat_Registration_End_Date], 
+    [Repeat_Registration_Data].[Repeat_Fee] AS [Repeat_Fee], 
+    [Repeat_Registration_Data].[Date_Time] AS [Date_Time], 
+    [Repeat_Registration_Data].[Status] AS [Status]
+    FROM [dbo].[Repeat_Registration_Data] AS [Repeat_Registration_Data]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Repeat_Registration_Subject_List" EntityType="Self.Repeat_Registration_Subject_List" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Repeat_Registration_Subject_List].[ID] AS [ID], 
+    [Repeat_Registration_Subject_List].[Repeat_Registration_Id] AS [Repeat_Registration_Id], 
+    [Repeat_Registration_Subject_List].[Allow_Subject_Name] AS [Allow_Subject_Name], 
+    [Repeat_Registration_Subject_List].[Date_Time] AS [Date_Time], 
+    [Repeat_Registration_Subject_List].[Status] AS [Status]
+    FROM [dbo].[Repeat_Registration_Subject_List] AS [Repeat_Registration_Subject_List]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Users_List" EntityType="Self.Users_List" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Users_List].[ID] AS [ID], 
+    [Users_List].[Index_No] AS [Index_No], 
+    [Users_List].[Student_Name] AS [Student_Name], 
+    [Users_List].[Temp_Password] AS [Temp_Password], 
+    [Users_List].[Student_Type] AS [Student_Type], 
+    [Users_List].[Course] AS [Course], 
+    [Users_List].[Email] AS [Email], 
+    [Users_List].[Date_Time] AS [Date_Time], 
+    [Users_List].[Status] AS [Status]
+    FROM [dbo].[Users_List] AS [Users_List]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

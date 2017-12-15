@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BPDTSysModelStoreContainer" CdmEntityContainer="BPDTSysEntities">
+    <EntitySetMapping Name="Pro_Rata_Registration_Data">
+      <EntityTypeMapping TypeName="BPDTSysModel.Pro_Rata_Registration_Data">
+        <MappingFragment StoreEntitySet="Pro_Rata_Registration_Data">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Semester_Id" ColumnName="Semester_Id" />
+          <ScalarProperty Name="Pro_Rata_Registration_Start_Date" ColumnName="Pro_Rata_Registration_Start_Date" />
+          <ScalarProperty Name="Pro_Rata_Registration_End_Date" ColumnName="Pro_Rata_Registration_End_Date" />
+          <ScalarProperty Name="Pro_Rata_Fee" ColumnName="Pro_Rata_Fee" />
+          <ScalarProperty Name="Last_Payment_Date_From" ColumnName="Last_Payment_Date_From" />
+          <ScalarProperty Name="Last_Payment_Date_To" ColumnName="Last_Payment_Date_To" />
+          <ScalarProperty Name="Late_Payment_Fee" ColumnName="Late_Payment_Fee" />
+          <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pro_Rata_Registration_Subject_List">
+      <EntityTypeMapping TypeName="BPDTSysModel.Pro_Rata_Registration_Subject_List">
+        <MappingFragment StoreEntitySet="Pro_Rata_Registration_Subject_List">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Pro_Rata_Registration_Id" ColumnName="Pro_Rata_Registration_Id" />
+          <ScalarProperty Name="Allow_Subject_Name" ColumnName="Allow_Subject_Name" />
+          <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regular_Registration_Data">
+      <EntityTypeMapping TypeName="BPDTSysModel.Regular_Registration_Data">
+        <MappingFragment StoreEntitySet="Regular_Registration_Data">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Semester_Id" ColumnName="Semester_Id" />
+          <ScalarProperty Name="Semester_Name" ColumnName="Semester_Name" />
+          <ScalarProperty Name="Payment_Start_Date" ColumnName="Payment_Start_Date" />
+          <ScalarProperty Name="Payment_End_Date" ColumnName="Payment_End_Date" />
+          <ScalarProperty Name="Semester_Start_Date" ColumnName="Semester_Start_Date" />
+          <ScalarProperty Name="Semester_End_Date" ColumnName="Semester_End_Date" />
+          <ScalarProperty Name="Semester_Fee" ColumnName="Semester_Fee" />
+          <ScalarProperty Name="Late_Payment_Date_From" ColumnName="Late_Payment_Date_From" />
+          <ScalarProperty Name="Late_Payment_Date_To" ColumnName="Late_Payment_Date_To" />
+          <ScalarProperty Name="Late_Payment_Fee" ColumnName="Late_Payment_Fee" />
+          <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Repeat_Registration_Data">
+      <EntityTypeMapping TypeName="BPDTSysModel.Repeat_Registration_Data">
+        <MappingFragment StoreEntitySet="Repeat_Registration_Data">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Semester_Id" ColumnName="Semester_Id" />
+          <ScalarProperty Name="Repeat_Registration_Start_Date" ColumnName="Repeat_Registration_Start_Date" />
+          <ScalarProperty Name="Repeat_Registration_End_Date" ColumnName="Repeat_Registration_End_Date" />
+          <ScalarProperty Name="Repeat_Fee" ColumnName="Repeat_Fee" />
+          <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Repeat_Registration_Subject_List">
+      <EntityTypeMapping TypeName="BPDTSysModel.Repeat_Registration_Subject_List">
+        <MappingFragment StoreEntitySet="Repeat_Registration_Subject_List">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Repeat_Registration_Id" ColumnName="Repeat_Registration_Id" />
+          <ScalarProperty Name="Allow_Subject_Name" ColumnName="Allow_Subject_Name" />
+          <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users_List">
+      <EntityTypeMapping TypeName="BPDTSysModel.Users_List">
+        <MappingFragment StoreEntitySet="Users_List">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Index_No" ColumnName="Index_No" />
+          <ScalarProperty Name="Student_Name" ColumnName="Student_Name" />
+          <ScalarProperty Name="Temp_Password" ColumnName="Temp_Password" />
+          <ScalarProperty Name="Student_Type" ColumnName="Student_Type" />
+          <ScalarProperty Name="Course" ColumnName="Course" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Date_Time" ColumnName="Date_Time" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

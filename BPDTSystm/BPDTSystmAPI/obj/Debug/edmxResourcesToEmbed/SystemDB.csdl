@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BPDTSysModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Pro_Rata_Registration_Data">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Semester_Id" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Pro_Rata_Registration_Start_Date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Pro_Rata_Registration_End_Date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Pro_Rata_Fee" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Last_Payment_Date_From" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Last_Payment_Date_To" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Late_Payment_Fee" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Date_Time" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Pro_Rata_Registration_Subject_List">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Pro_Rata_Registration_Id" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_Subject_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Date_Time" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Regular_Registration_Data">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Semester_Id" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Semester_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Payment_Start_Date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Payment_End_Date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Semester_Start_Date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Semester_End_Date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Semester_Fee" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Late_Payment_Date_From" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Late_Payment_Date_To" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Late_Payment_Fee" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Date_Time" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Repeat_Registration_Data">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Semester_Id" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Repeat_Registration_Start_Date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Repeat_Registration_End_Date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Repeat_Fee" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Date_Time" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Repeat_Registration_Subject_List">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Repeat_Registration_Id" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Allow_Subject_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Date_Time" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Users_List">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="Index_No" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Student_Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Temp_Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Student_Type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Course" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Date_Time" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="BPDTSysEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Pro_Rata_Registration_Data" EntityType="Self.Pro_Rata_Registration_Data" />
+    <EntitySet Name="Pro_Rata_Registration_Subject_List" EntityType="Self.Pro_Rata_Registration_Subject_List" />
+    <EntitySet Name="Regular_Registration_Data" EntityType="Self.Regular_Registration_Data" />
+    <EntitySet Name="Repeat_Registration_Data" EntityType="Self.Repeat_Registration_Data" />
+    <EntitySet Name="Repeat_Registration_Subject_List" EntityType="Self.Repeat_Registration_Subject_List" />
+    <EntitySet Name="Users_List" EntityType="Self.Users_List" />
+  </EntityContainer>
+</Schema>

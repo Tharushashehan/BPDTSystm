@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Examinations";
+    Layout = "~/Areas/Admin/Views/Shared/Index.cshtml";
+}
+
+<div ng-app="myapp" ng-controller="ExaminationsController">
+
+    <div ng-show="CheckUserAuth()">
+        <h2>Examinations Is Still Under Development</h2>
+    </div>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="~/Areas/Admin/JavaScript/AdminViews/Examinations.js"></script>

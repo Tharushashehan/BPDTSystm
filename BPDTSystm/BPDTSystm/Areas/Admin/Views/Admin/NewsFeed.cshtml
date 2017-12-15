@@ -1,0 +1,151 @@
+﻿
+@{
+    ViewBag.Title = "News Feed";
+    Layout = "~/Areas/Admin/Views/Shared/Index.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.0/themes/default/style.min.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/Css/UserListTable.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div ng-app="myapp" ng-controller="NewsFeedController">
+        <div ng-show="CheckUserAuth()">
+        <!--Course data entered here-->
+        <form name="ItemForm" novalidate>
+            <div class="row searchFix" style="padding-top:15px;">
+                <div class="col-xs-8 col-sm-4 col-md-3">
+                    <input type="text" class="form-control" placeholder="Search Items..." id="searchItem" name="searchItem" ng-model="searchItem" ng-keyup="searchItemItemAutoComplete()">
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="row content-body">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12 section-header">
+                            <small>News Feed</small>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12"> <h2>Lets start a new semester</h2></div>
+                       
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+
+                        <div class="col-md-12" align="left">
+                            <button type="button" class="btn-danger" data-toggle="modal" data-target="#DeleteAllDataModal">Delete old data</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+        <br />
+        <br />
+        <div class="row actionButtonFix">
+            <div class="col-md-4 col-md-offset-8 action-button-container">
+                @*<button type="button" class="btn-small btn btn-xs btn-warning" id="clearData" ng-click="clearData()">Clear</button>
+                    <button type="button" class="btn-small btn btn-xs btn-primary" id="saveData" ng-click="saveData(1)">Save</button>*@
+
+            </div>
+        </div>
+        <!--This is the warning modal before delete all data-->
+        <!--START-->
+        <div class="modal fade" id="DeleteAllDataModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+            <div class="modal-dialog modal-sm alert-box-position">
+                <div class="modal-content">
+                    <div class="modal-header dialog-header-Warning">
+                        <h4 class="modal-title error-alert-header-text">Warning</h4>
+                    </div>
+                    <div class="modal-body" id="warningMessage">
+                        <p>Are you sure you want to delete all data</p>
+                    </div>
+                    <div class="modal-footer error-modal-footer">
+                        <button type="button" class="btn-xs btn-warning" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn-xs btn-primary" ng-click="DeleteAllData()" >Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--END-->
+        <!-- Sucess Alert Modal-->
+        <div class="modal fade " id="sucessModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" @*data-keyboard="false" data-backdrop="static"*@>
+            <div class="modal-dialog  modal-sm alert-box-position">
+                <div class="modal-content">
+                    <div class="modal-header dialog-header-sucess">
+                        <h4 class="modal-title error-alert-header-text">Success!</h4>
+                    </div>
+                    <!-- dialog body -->
+                    @*<span class="modal-body " id="sucessMassageHeader"></span>*@
+                    <div class="modal-body">
+                        <div class="row col-md-12"><h3 id="sucessMassageHeader">Data Deleted Successfully</h3></div>
+                        <div class="row col-md-12"><span id="sucessmessage"></span></div>
+                      
+
+                    </div>
+                    <!-- dialog buttons -->
+                    <div class="modal-footer error-modal-footer ">
+                        <button type="button" data-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End-->
+        <!--Bootstrap warning modal-->
+        <div class="modal fade" id="errorModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+            <div class="modal-dialog modal-sm alert-box-position">
+                <div class="modal-content">
+                    <div class="modal-header dialog-header-Warning">
+                        <h4 class="modal-title error-alert-header-text">Error Occur</h4>
+                    </div>
+                    <div class="modal-body" id="warningMessage">
+                        <p>Error occur Please check the connections</p>
+                    </div>
+                    <div class="modal-footer error-modal-footer">
+                        <button class="button" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    @*</div>*@
+    <!--Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+        <script src="~/Scripts/moment.js"></script>
+        <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+        <script src="~/Scripts/timepickerpop.js"></script>*@
+
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.2/jquery-ui.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>*@
+
+    <!-- CDN JavaScript Links-->
+    @*<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular-route.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular-animate.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular-animate.min.js"></script>*@
+
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Areas/Admin/JavaScript/AdminViews/NewsFeed.js"></script>
+</body>
+</html>
+
+

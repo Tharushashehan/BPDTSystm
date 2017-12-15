@@ -1,0 +1,272 @@
+﻿
+@{
+    ViewBag.Title = "Regular Registration";
+    Layout = "~/Areas/Admin/Views/Shared/Index.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.0/themes/default/style.min.css" rel="stylesheet" />
+    <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet" />
+
+</head>
+<body>
+
+    <div ng-app="myapp" ng-controller="RegistrationDatesController">
+        <div ng-show="CheckUserAuth()">
+            <!--Course data entered here-->
+            <form name="ItemForm" novalidate>
+                <div class="row searchFix" style="padding-top:15px;">
+                    <div class="col-xs-8 col-sm-4 col-md-3">
+                        <input type="text" class="form-control" placeholder="Search Items..." id="searchItem" name="searchItem" ng-model="searchItem" ng-keyup="searchItemItemAutoComplete()">
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="row content-body">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12 section-header">
+                                <small>Regular Registration Details</small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+                                            <label class="lableMargin">Semester ID</label>
+                                            <input class="form-control input-sm   required" type="text"
+                                                   id="Semester_Id" name="Semester_Id" ng-model="Semester_Id">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div class="col-md-4">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+                                            <label class="lableMargin">Semester Name</label>
+                                            <input class="form-control input-sm   required" type="text"
+                                                   id="Semester_Name" name="Semester_Name" ng-model="Semester_Name">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-md-4">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+                                            @*<lable class="RequiredFeildIndicator">*</lable>*@
+                                            <label class="lableMargin">Payment Start Date</label>
+                                            <input type="date" data-date-format="yyyy-mm-dd"
+                                                   class="form-control input-sm field-topSpacing  marginBottom datepicker"
+                                                   id="Payment_Start_Date" ng-model="Payment_Start_Date"
+                                                   name="Payment_Start_Date" data-date-end-date="0d" />
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+                                            @*<lable class="RequiredFeildIndicator">*</lable>*@
+                                            <label class="lableMargin">Payment End Date</label>
+                                            <input type="date" data-date-format="yyyy-mm-dd"
+                                                   class="form-control input-sm field-topSpacing  marginBottom datepicker"
+                                                   id="Payment_End_Date" ng-model="Payment_End_Date"
+                                                   name="Payment_End_Date" data-date-end-date="0d" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-md-4">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+                                            @*<lable class="requiredfeildindicator">*</lable>*@
+                                            <label class="lableMargin">Semester Start Date</label>
+                                            <input type="date" data-date-format="yyyy-mm-dd"
+                                                   class="form-control input-sm field-topSpacing  marginBottom datepicker"
+                                                   id="Semester_Start_Date" ng-model="Semester_Start_Date"
+                                                   name="Semester_Start_Date" data-date-end-date="0d" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-md-4">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+                                            @*<lable class="RequiredFeildIndicator">*</lable>*@
+                                            <label class="lableMargin">Semester End Date</label>
+                                            <input type="date" data-date-format="yyyy-mm-dd"
+                                                   class="form-control input-sm field-topSpacing  marginBottom datepicker"
+                                                   id="Semester_End_Date" ng-model="Semester_End_Date"
+                                                   name="Semester_End_Date" data-date-end-date="0d" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+                                            @*<lable class="RequiredFeildIndicator">*</lable>*@
+                                            <label class="lableMargin">Semester Fee</label>
+                                            <input class="form-control input-sm   required" type="text"
+                                                   id="Semester_Fee" name="Semester_Fee" ng-model="Semester_Fee">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-md-4">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+                                            @*<lable class="requiredfeildindicator">*</lable>*@
+                                            <label class="lableMargin">Late Payment Date From</label>
+                                            <input type="date" data-date-format="yyyy-mm-dd"
+                                                   class="form-control input-sm field-topSpacing  marginBottom datepicker"
+                                                   id="Late_Payment_Date_From" ng-model="Late_Payment_Date_From"
+                                                   name="Late_Payment_Date_From" data-date-end-date="0d" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-md-4">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+                                            @*<lable class="RequiredFeildIndicator">*</lable>*@
+                                            <label class="lableMargin">Late Payment Date To</label>
+                                            <input type="date" data-date-format="yyyy-mm-dd"
+                                                   class="form-control input-sm field-topSpacing  marginBottom datepicker"
+                                                   id="Late_Payment_Date_To" ng-model="Late_Payment_Date_To"
+                                                   name="Late_Payment_Date_To" data-date-end-date="0d" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+                                            @*<lable class="RequiredFeildIndicator">*</lable>*@
+                                            <label class="lableMargin">Late Payment Fee</label>
+                                            <input class="form-control input-sm   required" type="text"
+                                                   id="Late_Payment_Fee" name="Late_Payment_Fee" ng-model="Late_Payment_Fee">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <br />
+            <br />
+            <div class="row actionButtonFix">
+                <div class="col-md-4 col-md-offset-8 action-button-container">
+                    <button type="button" class="btn-small btn btn-xs btn-warning" id="clearData" ng-click="clearData()">Clear</button>
+                    <button type="button" class="btn-small btn btn-xs btn-primary" id="saveData" ng-click="saveData(1)">Save</button>
+
+                </div>
+            </div>
+
+            <!-- Sucess Alert Modal-->
+            <div class="modal fade " id="sucessModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" @*data-keyboard="false" data-backdrop="static"*@>
+                <div class="modal-dialog  modal-sm alert-box-position">
+                    <div class="modal-content">
+                        <div class="modal-header dialog-header-sucess">
+                            <h4 class="modal-title error-alert-header-text">Success!</h4>
+                        </div>
+                        <!-- dialog body -->
+                        @*<span class="modal-body " id="sucessMassageHeader"></span>*@
+                        <div class="modal-body">
+                            <div class="row col-md-12"><h3 id="sucessMassageHeader">Data Saved Successfully</h3></div>
+                            <div class="row col-md-12"><span id="sucessmessage"></span></div>
+                            @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+
+                        </div>
+                        <!-- dialog buttons -->
+                        <div class="modal-footer error-modal-footer ">
+                            <button type="button" data-dismiss="modal">Ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End-->
+            <!--Bootstrap warning modal-->
+            <div class="modal fade" id="errorModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+                <div class="modal-dialog modal-sm alert-box-position">
+                    <div class="modal-content">
+                        <div class="modal-header dialog-header-Warning">
+                            <h4 class="modal-title error-alert-header-text">Authorization error</h4>
+                        </div>
+                        <div class="modal-body" id="warningMessage">
+                            <p>Error occur Please check the connections</p>
+                        </div>
+                        <div class="modal-footer error-modal-footer">
+                            <button class="button" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+        <!--Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/Scripts/timepickerpop.js"></script>*@
+
+        @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.2/jquery-ui.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>*@
+
+        <!-- CDN JavaScript Links-->
+
+        @*<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular-route.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular-animate.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular-animate.min.js"></script>*@
+
+        <script src="~/Scripts/modernizr-2.6.2.js"></script>
+        <script src="~/Areas/Admin/JavaScript/AdminViews/RegistrationDates.js"></script>
+ 
+</body>
+</html>
+

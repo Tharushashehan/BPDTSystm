@@ -1,0 +1,138 @@
+﻿.customer-img-thumbnail {
+    margin-left: 18px;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    padding: 4px;
+}
+
+.customer-modal-position {
+    margin-top: 125px;
+}
+.NPIMain-DetailsTableScroll {
+    max-height:250px;
+    overflow-x:auto;
+}
+/*Button Alignment*/
+@media (min-width:1198px) {
+
+    .btnContainer .btnWrapper div {
+        width: 100px;
+        height: 35px;
+        margin-left: 2px;
+    }
+
+    .btnContainer .btnWrapper .btn {
+        width: 100px;
+        height: 35px;
+    }
+
+    .btnWrapper {
+        padding: 0px;
+        /*margin-top: -35px;*/
+        
+    }
+}
+
+@media (min-width:992px) and (max-width:1199px) {
+
+    .btnContainer .btnWrapper div {
+        width: 100px;
+        height: 35px;
+        margin-left: 2px;
+    }
+
+    .btnContainer .btnWrapper .btn {
+        width: 100px;
+        height: 35px;
+    }
+
+    .btnWrapper {
+        padding: 0px;
+        margin-top: -35px;
+        
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+
+    .btnContainer .btnWrapper div {
+        width: 100px;
+        height: 25px;
+        margin-left: 2px;
+    }
+
+    .btnContainer .btnWrapper .btn {
+        width: 100px;
+        height: 25px;
+    }
+
+    .btnWrapper {
+        padding: 0px;
+        margin-top: 2px;
+        
+    }
+}
+
+@media  (max-width:768px) {
+
+    .btnContainer .btnWrapper div {
+        width: 100px;
+        height: 25px;
+        margin-left: 2px;
+    }
+
+    .btnContainer .btnWrapper .btn {
+        width: 100px;
+        height: 25px;
+    }
+
+    .btnWrapper {
+        padding: 0px;
+        margin-top: 2px;
+        
+    }
+
+    /*.btnContainer
+    {
+        visibility:hidden;
+    }*/
+}
+
+@media  (max-width:642px) {
+
+        .btnContainer .btnWrapper div {
+        width: 100px;
+        height: 25px;
+        margin-left: 2px;
+    }
+
+    .btnContainer .btnWrapper .btn {
+        width: 100px;
+        height: 25px;
+    }
+
+    .btnWrapper {
+        padding: 0px;
+        margin-top: 2px;
+        
+    }
+
+    /*.btnContainer
+    {
+        visibility:hidden;
+    }*/
+}
+
+@media (max-width:992px) {
+    .content-form {
+        margin-top:20px;
+    }
+}
+
+@media (max-width:628px) {
+    .content-form {
+        margin-top:40px;
+    }
+}

@@ -1,0 +1,78 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.0/themes/default/style.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    
+</head>
+<body>
+    <div ng-app="myapp" ng-controller="LoginController">
+
+        
+
+        <div class="body"></div>
+        <div class="grad"></div>
+        <div class="logo"><img src="~/Content/BiZOOMLogo.png" /></div>
+        <div class="header">
+            <p><h4>Welcome to</h4></p>
+            <div>BiZOOM<span><b>System</b></span></div>
+        </div>
+        <br>
+        <div class="login">
+            <input type="text" placeholder="username" name="username" ng-model="username"><br>
+            <input type="password" placeholder="password" name="password" ng-model="password"><br>
+            <input type="button" value="Login" ng-click="LoginClicked(1)">
+        </div>
+
+        <!--Bootstrap warning modal-->
+        <div class="modal fade" id="Warningmodal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">      
+            <div class="modal-dialog modal-sm alert-box-position">
+                <div class="modal-content">
+                    <div class="modal-header dialog-header-Warning">
+                        <h4 class="modal-title error-alert-header-text">Authorization error</h4>
+                    </div>
+                    <div class="modal-body" id="warningMessage">
+                        <p>You are not authorized</p>
+                    </div>
+                    <div class="modal-footer error-modal-footer">
+                        <button class="button" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+        <!--Scripts-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.2/jquery-ui.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        @*<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>*@
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+
+        <!-- CDN JavaScript Links-->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular-route.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular-animate.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular-animate.min.js"></script>
+
+        <script src="~/Scripts/prefixfree.min.js"></script>
+        <script src="~/Scripts/Login.js"></script>
+        <script src="~/Scripts/serverLinks.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,375 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BPDTSystem Admin</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link href="~/Areas/Admin/Content/Css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link href="~/Areas/Admin/Content/Css/AdminLTE.min.css" rel="stylesheet" />
+    <!--Colour blue selected-->
+    <link href="~/Areas/Admin/Content/Css/skin-blue.min.css" rel="stylesheet" />
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div >
+        <div class="wrapper">
+
+            <!-- Main Header -->
+            <header class="main-header">
+
+                <!-- Logo -->
+                <a href="index2.html" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><b>A</b>LT</span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><b>Admin</b>LTE</span>
+                </a>
+
+                <!-- Header Navbar -->
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <!-- Navbar Right Menu -->
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- Messages: style can be found in dropdown.less-->
+                            <li class="dropdown messages-menu">
+                                <!-- Menu toggle button -->
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <span class="label label-success">4</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="header">You have 4 messages</li>
+                                    <li>
+                                        <!-- inner menu: contains the messages -->
+                                        <ul class="menu">
+                                            <li>
+                                                <!-- start message -->
+                                                <a href="#">
+                                                    <div class="pull-left">
+                                                        <!-- User Image -->
+                                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAAAAACIM/FCAAAEzElEQVR42u3cbbqjKgwAYPe/voIIIoqQddwfd756qq2SAKEPWcD0vIOYgJDh8SUxdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdMiXQ5SZnXObc4uZZKMQod0OTxE3q1qDCL1GOIqwjA1BhD1W/B9+agQi3TsGAMBuGoC8H40/FMUdMgW4Fk6whixwOYLiC5Ee7sTMFaIj3ItVsIQYuB1eMITMkBC7ZAdZICnCyAwyQ2IEyQqiITl2wQgyASI8H8gYMRBwXCBiB1wYJhCHdEAcWUA0oGPnAJERD4GFAWQFihirQxSJA/8ORkN2GgjoypCZyAFBVIWISAXBLrOQEEvmgCgqQggHBDskA48Zgp8lOEighOBKLhRkInXgcgkKstJCUOkdAxHEDlTFNXCZ6gAAsRJkp4bAVAUiyR2YRe/A6MkCCFUgGz0E8d5Kh5CWJ/gyZeCSDbE5MR1ic0BiBUiOKQKgykNiFogpDpFZHOmZJBmi80B8ccicBxKLQ1weCIjSEJ8JokpD9kwQXRoSM0HmwhCRyZG8Shx4pZH0RJIKGXNB1sIQlQuyfQvEF4ZMHcIMojqE2WT/mtfv1yTErylRHrkgpYtG4o9VFcv4r1lY5VrqytIQmwnyLdtBe3HIyCsfstsynctDPKuXFgKyZIGI8hDNaq5jPr1xqrRQH0M9pymCgWSYJIijDwiIYpRFcEc46AtgXQdC/mxhjjViICOjJwt38Iz6vTXVghhaR3jUghAfR7HVILTTPVY8Lit5lCd4COXKPcqaEMllQNDXLhYmA4KGCKo6BXu5HX2jh2h9hb73hr8s5qsndSLIWLvKooJQHHgKggOE4HQjQe8aCgj6bqh98IBgv1WTXGinuZhvKk8QMggmwUea9hVUzSuSbylFos47ZO1EEiWRqtkWXYOXteZ4kLbcSVibBLo+bpRNkG5/VtwJ+9GRtqWa7mVGymZOxI3C7jTYirSN6Khbt9mrg+KJ2xySN9MbL5WQcab+3QztDaePz1dcxKMByOOh3o5KtCLDb2ZqATouZ5sS3ogsv0gDOfrblH250BA3k63FLBoiJrsF8Md/oDLOee937zdnT/rkWgirnURViNDL7//1kFj8yd/TaV90nU3sfxCI9epzx9B9mQqffJDzwSs23E/VB9XZNstSkNGeJYr1XlFuTqoAn2K5C5H27eWqG/2Vzbu8uVuZFaI/1x8XR2X+uPm96VwQuVwrCD+nvPN0+Tzp7gzLZYi6s5/4bsaq5cbNv00RQ/TtPfewmvEged7+d662Ar8E0am3J70zRik1KjUZuyV+E/KaCKJzXQK9vrbXBJDRA4PYRiREOGASn9ZiQ1LurREfNisGoj2REuFlGoTTcPwaFJ0AESswjPM9vTOICsAyTvv/Dxk+QeUNfQdigXHM1yEOWIe7CBEemMcmrkD4Ow4lLxCxQQOxfYas0ESsnyALNBL2PURDMzG9g8jYDuTHIchniIeGwp9DDDQV5gzS0oMF8OMM+tBOZXKw/D2GjNBcyEOIaw+yHEFEbA/yzyz5C5mhwTAHEN8ixL9CJDQZ4gVi2oToF4hrE7K8QPY2If4FEtuExJ+QRuf639k+tFufPFcp/wHBjk4TNWnocQAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" class="img-circle" alt="User Image">
+                                                    </div>
+                                                    <!-- Message title and timestamp -->
+                                                    <h4>
+                                                        Support Team
+                                                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                                                    </h4>
+                                                    <!-- The message -->
+                                                    <p>Why not buy a new awesome theme?</p>
+                                                </a>
+                                            </li><!-- end message -->
+                                        </ul><!-- /.menu -->
+                                    </li>
+                                    <li class="footer"><a href="#">See All Messages</a></li>
+                                </ul>
+                            </li><!-- /.messages-menu -->
+                            <!-- Notifications Menu -->
+                            <li class="dropdown notifications-menu">
+                                <!-- Menu toggle button -->
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-bell-o"></i>
+                                    <span class="label label-warning">10</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="header">You have 10 notifications</li>
+                                    <li>
+                                        <!-- Inner Menu: contains the notifications -->
+                                        <ul class="menu">
+                                            <li>
+                                                <!-- start notification -->
+                                                <a href="#">
+                                                    <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                                                </a>
+                                            </li><!-- end notification -->
+                                        </ul>
+                                    </li>
+                                    <li class="footer"><a href="#">View all</a></li>
+                                </ul>
+                            </li>
+                            <!-- Tasks Menu -->
+                            <li class="dropdown tasks-menu">
+                                <!-- Menu Toggle Button -->
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-flag-o"></i>
+                                    <span class="label label-danger">9</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="header">You have 9 tasks</li>
+                                    <li>
+                                        <!-- Inner menu: contains the tasks -->
+                                        <ul class="menu">
+                                            <li>
+                                                <!-- Task item -->
+                                                <a href="#">
+                                                    <!-- Task title and progress text -->
+                                                    <h3>
+                                                        Design some buttons
+                                                        <small class="pull-right">20%</small>
+                                                    </h3>
+                                                    <!-- The progress bar -->
+                                                    <div class="progress xs">
+                                                        <!-- Change the css width attribute to simulate progress -->
+                                                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                            <span class="sr-only">20% Complete</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li><!-- end task item -->
+                                        </ul>
+                                    </li>
+                                    <li class="footer">
+                                        <a href="#">View all tasks</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- User Account Menu -->
+                            <li class="dropdown user user-menu">
+                                <!-- Menu Toggle Button -->
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <!-- The user image in the navbar-->
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAAAAACIM/FCAAAEzElEQVR42u3cbbqjKgwAYPe/voIIIoqQddwfd756qq2SAKEPWcD0vIOYgJDh8SUxdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdMiXQ5SZnXObc4uZZKMQod0OTxE3q1qDCL1GOIqwjA1BhD1W/B9+agQi3TsGAMBuGoC8H40/FMUdMgW4Fk6whixwOYLiC5Ee7sTMFaIj3ItVsIQYuB1eMITMkBC7ZAdZICnCyAwyQ2IEyQqiITl2wQgyASI8H8gYMRBwXCBiB1wYJhCHdEAcWUA0oGPnAJERD4GFAWQFihirQxSJA/8ORkN2GgjoypCZyAFBVIWISAXBLrOQEEvmgCgqQggHBDskA48Zgp8lOEighOBKLhRkInXgcgkKstJCUOkdAxHEDlTFNXCZ6gAAsRJkp4bAVAUiyR2YRe/A6MkCCFUgGz0E8d5Kh5CWJ/gyZeCSDbE5MR1ic0BiBUiOKQKgykNiFogpDpFZHOmZJBmi80B8ccicBxKLQ1weCIjSEJ8JokpD9kwQXRoSM0HmwhCRyZG8Shx4pZH0RJIKGXNB1sIQlQuyfQvEF4ZMHcIMojqE2WT/mtfv1yTErylRHrkgpYtG4o9VFcv4r1lY5VrqytIQmwnyLdtBe3HIyCsfstsynctDPKuXFgKyZIGI8hDNaq5jPr1xqrRQH0M9pymCgWSYJIijDwiIYpRFcEc46AtgXQdC/mxhjjViICOjJwt38Iz6vTXVghhaR3jUghAfR7HVILTTPVY8Lit5lCd4COXKPcqaEMllQNDXLhYmA4KGCKo6BXu5HX2jh2h9hb73hr8s5qsndSLIWLvKooJQHHgKggOE4HQjQe8aCgj6bqh98IBgv1WTXGinuZhvKk8QMggmwUea9hVUzSuSbylFos47ZO1EEiWRqtkWXYOXteZ4kLbcSVibBLo+bpRNkG5/VtwJ+9GRtqWa7mVGymZOxI3C7jTYirSN6Khbt9mrg+KJ2xySN9MbL5WQcab+3QztDaePz1dcxKMByOOh3o5KtCLDb2ZqATouZ5sS3ogsv0gDOfrblH250BA3k63FLBoiJrsF8Md/oDLOee937zdnT/rkWgirnURViNDL7//1kFj8yd/TaV90nU3sfxCI9epzx9B9mQqffJDzwSs23E/VB9XZNstSkNGeJYr1XlFuTqoAn2K5C5H27eWqG/2Vzbu8uVuZFaI/1x8XR2X+uPm96VwQuVwrCD+nvPN0+Tzp7gzLZYi6s5/4bsaq5cbNv00RQ/TtPfewmvEged7+d662Ar8E0am3J70zRik1KjUZuyV+E/KaCKJzXQK9vrbXBJDRA4PYRiREOGASn9ZiQ1LurREfNisGoj2REuFlGoTTcPwaFJ0AESswjPM9vTOICsAyTvv/Dxk+QeUNfQdigXHM1yEOWIe7CBEemMcmrkD4Ow4lLxCxQQOxfYas0ESsnyALNBL2PURDMzG9g8jYDuTHIchniIeGwp9DDDQV5gzS0oMF8OMM+tBOZXKw/D2GjNBcyEOIaw+yHEFEbA/yzyz5C5mhwTAHEN8ixL9CJDQZ4gVi2oToF4hrE7K8QPY2If4FEtuExJ+QRuf639k+tFufPFcp/wHBjk4TNWnocQAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" class="user-image" alt="User Image">
+                                    <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                    <span class="hidden-xs">Admin User</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- The user image in the menu -->
+                                    <li class="user-header">
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAAAAACIM/FCAAAEzElEQVR42u3cbbqjKgwAYPe/voIIIoqQddwfd756qq2SAKEPWcD0vIOYgJDh8SUxdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdMiXQ5SZnXObc4uZZKMQod0OTxE3q1qDCL1GOIqwjA1BhD1W/B9+agQi3TsGAMBuGoC8H40/FMUdMgW4Fk6whixwOYLiC5Ee7sTMFaIj3ItVsIQYuB1eMITMkBC7ZAdZICnCyAwyQ2IEyQqiITl2wQgyASI8H8gYMRBwXCBiB1wYJhCHdEAcWUA0oGPnAJERD4GFAWQFihirQxSJA/8ORkN2GgjoypCZyAFBVIWISAXBLrOQEEvmgCgqQggHBDskA48Zgp8lOEighOBKLhRkInXgcgkKstJCUOkdAxHEDlTFNXCZ6gAAsRJkp4bAVAUiyR2YRe/A6MkCCFUgGz0E8d5Kh5CWJ/gyZeCSDbE5MR1ic0BiBUiOKQKgykNiFogpDpFZHOmZJBmi80B8ccicBxKLQ1weCIjSEJ8JokpD9kwQXRoSM0HmwhCRyZG8Shx4pZH0RJIKGXNB1sIQlQuyfQvEF4ZMHcIMojqE2WT/mtfv1yTErylRHrkgpYtG4o9VFcv4r1lY5VrqytIQmwnyLdtBe3HIyCsfstsynctDPKuXFgKyZIGI8hDNaq5jPr1xqrRQH0M9pymCgWSYJIijDwiIYpRFcEc46AtgXQdC/mxhjjViICOjJwt38Iz6vTXVghhaR3jUghAfR7HVILTTPVY8Lit5lCd4COXKPcqaEMllQNDXLhYmA4KGCKo6BXu5HX2jh2h9hb73hr8s5qsndSLIWLvKooJQHHgKggOE4HQjQe8aCgj6bqh98IBgv1WTXGinuZhvKk8QMggmwUea9hVUzSuSbylFos47ZO1EEiWRqtkWXYOXteZ4kLbcSVibBLo+bpRNkG5/VtwJ+9GRtqWa7mVGymZOxI3C7jTYirSN6Khbt9mrg+KJ2xySN9MbL5WQcab+3QztDaePz1dcxKMByOOh3o5KtCLDb2ZqATouZ5sS3ogsv0gDOfrblH250BA3k63FLBoiJrsF8Md/oDLOee937zdnT/rkWgirnURViNDL7//1kFj8yd/TaV90nU3sfxCI9epzx9B9mQqffJDzwSs23E/VB9XZNstSkNGeJYr1XlFuTqoAn2K5C5H27eWqG/2Vzbu8uVuZFaI/1x8XR2X+uPm96VwQuVwrCD+nvPN0+Tzp7gzLZYi6s5/4bsaq5cbNv00RQ/TtPfewmvEged7+d662Ar8E0am3J70zRik1KjUZuyV+E/KaCKJzXQK9vrbXBJDRA4PYRiREOGASn9ZiQ1LurREfNisGoj2REuFlGoTTcPwaFJ0AESswjPM9vTOICsAyTvv/Dxk+QeUNfQdigXHM1yEOWIe7CBEemMcmrkD4Ow4lLxCxQQOxfYas0ESsnyALNBL2PURDMzG9g8jYDuTHIchniIeGwp9DDDQV5gzS0oMF8OMM+tBOZXKw/D2GjNBcyEOIaw+yHEFEbA/yzyz5C5mhwTAHEN8ixL9CJDQZ4gVi2oToF4hrE7K8QPY2If4FEtuExJ+QRuf639k+tFufPFcp/wHBjk4TNWnocQAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" class="img-circle" alt="User Image">
+                                        <p>
+                                            Admin User - Staff member
+                                            <small>Member since Nov. 2012</small>
+                                        </p>
+                                    </li>
+                                    <!-- Menu Body -->
+                                    <li class="user-body">
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Followers</a>
+                                        </div>
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Sales</a>
+                                        </div>
+                                        <div class="col-xs-4 text-center">
+                                            <a href="#">Friends</a>
+                                        </div>
+                                    </li>
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <div class="pull-left">
+                                            <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                        </div>
+                                        <div class="pull-right" onclick="myFunction()"  @*ng-app="myApp" ng-controller="AdminController"*@>
+                                            <a @*href="~/Home/Index"*@ class="btn btn-default btn-flat">Sign out</a>
+                                        </div>
+                                        
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Control Sidebar Toggle Button -->
+                            <li>
+                                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+
+                    <!-- Sidebar user panel (optional) -->
+                    <div class="user-panel">
+                        <div class="pull-left image">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAAAAACIM/FCAAAEzElEQVR42u3cbbqjKgwAYPe/voIIIoqQddwfd756qq2SAKEPWcD0vIOYgJDh8SUxdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdEiHdMiXQ5SZnXObc4uZZKMQod0OTxE3q1qDCL1GOIqwjA1BhD1W/B9+agQi3TsGAMBuGoC8H40/FMUdMgW4Fk6whixwOYLiC5Ee7sTMFaIj3ItVsIQYuB1eMITMkBC7ZAdZICnCyAwyQ2IEyQqiITl2wQgyASI8H8gYMRBwXCBiB1wYJhCHdEAcWUA0oGPnAJERD4GFAWQFihirQxSJA/8ORkN2GgjoypCZyAFBVIWISAXBLrOQEEvmgCgqQggHBDskA48Zgp8lOEighOBKLhRkInXgcgkKstJCUOkdAxHEDlTFNXCZ6gAAsRJkp4bAVAUiyR2YRe/A6MkCCFUgGz0E8d5Kh5CWJ/gyZeCSDbE5MR1ic0BiBUiOKQKgykNiFogpDpFZHOmZJBmi80B8ccicBxKLQ1weCIjSEJ8JokpD9kwQXRoSM0HmwhCRyZG8Shx4pZH0RJIKGXNB1sIQlQuyfQvEF4ZMHcIMojqE2WT/mtfv1yTErylRHrkgpYtG4o9VFcv4r1lY5VrqytIQmwnyLdtBe3HIyCsfstsynctDPKuXFgKyZIGI8hDNaq5jPr1xqrRQH0M9pymCgWSYJIijDwiIYpRFcEc46AtgXQdC/mxhjjViICOjJwt38Iz6vTXVghhaR3jUghAfR7HVILTTPVY8Lit5lCd4COXKPcqaEMllQNDXLhYmA4KGCKo6BXu5HX2jh2h9hb73hr8s5qsndSLIWLvKooJQHHgKggOE4HQjQe8aCgj6bqh98IBgv1WTXGinuZhvKk8QMggmwUea9hVUzSuSbylFos47ZO1EEiWRqtkWXYOXteZ4kLbcSVibBLo+bpRNkG5/VtwJ+9GRtqWa7mVGymZOxI3C7jTYirSN6Khbt9mrg+KJ2xySN9MbL5WQcab+3QztDaePz1dcxKMByOOh3o5KtCLDb2ZqATouZ5sS3ogsv0gDOfrblH250BA3k63FLBoiJrsF8Md/oDLOee937zdnT/rkWgirnURViNDL7//1kFj8yd/TaV90nU3sfxCI9epzx9B9mQqffJDzwSs23E/VB9XZNstSkNGeJYr1XlFuTqoAn2K5C5H27eWqG/2Vzbu8uVuZFaI/1x8XR2X+uPm96VwQuVwrCD+nvPN0+Tzp7gzLZYi6s5/4bsaq5cbNv00RQ/TtPfewmvEged7+d662Ar8E0am3J70zRik1KjUZuyV+E/KaCKJzXQK9vrbXBJDRA4PYRiREOGASn9ZiQ1LurREfNisGoj2REuFlGoTTcPwaFJ0AESswjPM9vTOICsAyTvv/Dxk+QeUNfQdigXHM1yEOWIe7CBEemMcmrkD4Ow4lLxCxQQOxfYas0ESsnyALNBL2PURDMzG9g8jYDuTHIchniIeGwp9DDDQV5gzS0oMF8OMM+tBOZXKw/D2GjNBcyEOIaw+yHEFEbA/yzyz5C5mhwTAHEN8ixL9CJDQZ4gVi2oToF4hrE7K8QPY2If4FEtuExJ+QRuf639k+tFufPFcp/wHBjk4TNWnocQAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAASUVORK5CYII=" class="img-circle" alt="User Image">
+                        </div>
+                        <div class="pull-left info">
+                            <p>Admin User</p>
+                            <!-- Status -->
+                            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                        </div>
+                    </div>
+
+                    <!-- search form (Optional) -->
+                    <form action="#" method="get" class="sidebar-form">
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                    <!-- /.search form -->
+                    <!-- Sidebar Menu -->
+                    <ul class="sidebar-menu">
+                        <li class="header">HEADER</li>
+                        <!-- Optionally, you can add icons to the links -->
+                        <li class="active"><a href="#"><i class="fa fa-university"></i> <span onclick="@("window.location.href='" + @Url.Action("NewsFeed", "Admin/NewsFeed") + "'");">News Feed</span></a></li>
+                        <li><a href="#"><i class="fa fa-graduation-cap"></i> <span onclick="@("window.location.href='" + @Url.Action("UsersList", "Admin/UsersList") + "'");">Users List</span></a></li>
+                        <li class="treeview">
+                            <a href="#"><i class="fa fa-calendar"></i> <span>Registration</span> <i class="fa fa-angle-left pull-right"></i></a>
+                            <ul class="treeview-menu">
+                                <li><a href="#" onclick="@("window.location.href='" + @Url.Action("RegularRegistration", "Admin/RegistrationDates") + "'");">Regular Registration</a></li>
+                                <li><a href="#" onclick="@("window.location.href='" + @Url.Action("Pro-RataRegistration", "Admin/ExameDates") + "'");">Pro-Rata Registration</a></li>
+                                <li><a href="#" onclick="@("window.location.href='" + @Url.Action("RepeatRegistration", "Admin/Repeat") + "'");">Repeat Registration</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><i class="fa fa-users"></i> <span onclick="@("window.location.href='" + @Url.Action("Lecturing", "Admin/Lecturing") + "'");">Lecturing</span></a></li>
+                        <li><a href="#"><i class="fa fa-clone"></i> <span onclick="@("window.location.href='" + @Url.Action("Examinations", "Admin/Examinations") + "'");">Examinations</span></a></li>
+                    </ul><!-- /.sidebar-menu -->
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        @ViewBag.Title
+                        <small>on BiZOOMSystem, your information companion </small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="fa fa-dashboard"></i>Detail Report</a></li>
+                        <li class="active">Here</li>
+                    </ol>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+                    <div class="container body-content" style="padding-right:80px">
+                        @RenderBody()
+                    </div>
+                </section>
+
+            <!-- /.content -->
+            </div><!-- /.content-wrapper -->
+            <!-- Main Footer -->
+            <footer class="main-footer">
+                <!-- To the right -->
+                <div class="pull-right hidden-xs">
+                    Have a nice day admin
+                </div><i class="fa fa-link"></i>
+                <!-- Default to the left -->
+                <strong>Copyright &copy; 2017 <a href="#">Team BiZOOM</a>.</strong> All rights reserved.
+            </footer>
+
+            <!-- Control Sidebar -->
+            <aside class="control-sidebar control-sidebar-dark">
+                <!-- Create the tabs -->
+                <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                    <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+                    <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <!-- Home tab content -->
+                    <div class="tab-pane active" id="control-sidebar-home-tab">
+                        <h3 class="control-sidebar-heading">Recent Activity</h3>
+                        <ul class="control-sidebar-menu">
+                            <li>
+                                <a href="javascript::;">
+                                    <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+                                    <div class="menu-info">
+                                        <h4 class="control-sidebar-subheading">On Development</h4>
+                                        <p>Will be 23 on April 24th</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul><!-- /.control-sidebar-menu -->
+
+                        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                        <ul class="control-sidebar-menu">
+                            <li>
+                                <a href="javascript::;">
+                                    <h4 class="control-sidebar-subheading">
+                                        Custom Template Design
+                                        <span class="label label-danger pull-right">70%</span>
+                                    </h4>
+                                    <div class="progress progress-xxs">
+                                        <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul><!-- /.control-sidebar-menu -->
+
+                    </div><!-- /.tab-pane -->
+                    <!-- Stats tab content -->
+                    <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div><!-- /.tab-pane -->
+                    <!-- Settings tab content -->
+                    <div class="tab-pane" id="control-sidebar-settings-tab">
+                        <form method="post">
+                            <h3 class="control-sidebar-heading">General Settings</h3>
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">
+                                    Report panel usage
+                                    <input type="checkbox" class="pull-right" checked>
+                                </label>
+                                <p>
+                                    Some information about this general settings option
+                                </p>
+                            </div><!-- /.form-group -->
+                        </form>
+                    </div><!-- /.tab-pane -->
+                </div>
+            </aside>
+            <div class="control-sidebar-bg"></div>
+        </div>
+        <!-- Sucess Alert Modal-->
+        <div class="modal fade " id="sucessModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" @*data-keyboard="false" data-backdrop="static"*@>
+            <div class="modal-dialog  modal-sm alert-box-position">
+                <div class="modal-content">
+                    <div class="modal-header dialog-header-sucess">
+                        <h4 class="modal-title error-alert-header-text">Success!</h4>
+                    </div>
+                    <!-- dialog body -->
+                    @*<span class="modal-body " id="sucessMassageHeader"></span>*@
+                    <div class="modal-body">
+                        <div class="row col-md-12"><h3 id="sucessMassageHeader"></h3></div>
+                        <div class="row col-md-12"><span id="sucessmessage"></span></div>
+                        @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+
+                    </div>
+                    <!-- dialog buttons -->
+                    <div class="modal-footer error-modal-footer ">
+                        <button type="button" data-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+    <!--Scripts-->
+    @*<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>*@
+
+    <script src="~/Areas/Admin/JavaScript/jQuery-2.1.4.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    <script src="~/Areas/Admin/JavaScript/app.min.js"></script>
+    <script src="~/Areas/Admin/JavaScript/bootstrap.min.js"></script>
+    <script src="~/Scripts/serverLinks.js"></script>
+
+    @*<script src="~/Scripts/LoginGlobalApps.js"></script>*@
+    <script src="~/Areas/Admin/JavaScript/Admin.js"></script>
+    
+</body>
+</html>

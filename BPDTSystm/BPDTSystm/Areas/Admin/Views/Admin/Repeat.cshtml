@@ -1,0 +1,367 @@
+﻿
+@{
+    ViewBag.Title = "Repeat Registration";
+    Layout = "~/Areas/Admin/Views/Shared/Index.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.0/themes/default/style.min.css" rel="stylesheet" />
+    <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet" />
+
+</head>
+<body>
+
+    <div ng-app="myapp" ng-controller="RepeatRegistrationController">
+        <div ng-show="CheckUserAuth()">
+            <!--Course data entered here-->
+            <form name="ItemForm" novalidate>
+                <div class="row searchFix" style="padding-top:15px;">
+                    <div class="col-xs-8 col-sm-4 col-md-3">
+                        <input type="text" class="form-control" placeholder="Search Items..." id="searchItem" name="searchItem" ng-model="searchItem" ng-keyup="searchItemItemAutoComplete()">
+                    </div>
+                </div>
+                <br />
+                <br />
+                <div class="row content-body">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12 section-header">
+                                <small>Repeat Registration Details</small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+                                            <label class="lableMargin">Semester ID</label>
+                                            <input class="form-control input-sm   required" type="text"
+                                                   id="Semester_Id" name="Semester_Id" ng-model="Semester_Id">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-md-4">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+                                            @*<lable class="RequiredFeildIndicator">*</lable>*@
+                                            <label class="lableMargin">Repeat Registration Start Date</label>
+                                            <input type="date" data-date-format="yyyy-mm-dd"
+                                                   class="form-control input-sm field-topSpacing  marginBottom datepicker"
+                                                   id="Repeat_Registration_Start_Date" ng-model="Repeat_Registration_Start_Date"
+                                                   name="Repeat_Registration_Start_Date" data-date-end-date="0d" />
+
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-md-4">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+                                            @*<lable class="RequiredFeildIndicator">*</lable>*@
+                                            <label class="lableMargin">Repeat Registration End Date</label>
+                                            <input type="date" data-date-format="yyyy-mm-dd"
+                                                   class="form-control input-sm field-topSpacing  marginBottom datepicker"
+                                                   id="Repeat_Registration_End_Date" ng-model="Repeat_Registration_End_Date"
+                                                   name="Repeat_Registration_End_Date" data-date-end-date="0d" />
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+                                            @*<lable class="requiredfeildindicator">*</lable>*@
+                                            <label class="lableMargin">Repeat Fee</label>
+                                            <input class="form-control input-sm   required" type="text"
+                                                   id="Repeat_Fee" name="Repeat_Fee" ng-model="Repeat_Fee">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-12" style="padding: 0.5cm 0cm;">
+                        <div class="row">
+                            <div class="col-md-12 section-header">
+                                <small></small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12 section-header">
+                                <small>Subject List</small>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <table width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label class="lableMargin" style="margin-top:20px">
+                                                    <input type="checkbox" ng-model="MIT"
+                                                           id="MIT" checked="checked">
+                                                    MIT
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-4">
+                                <table width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label class="lableMargin" style="margin-top:20px">
+                                                    <input type="checkbox" ng-model="FCS"
+                                                           id="FCS" checked="checked">
+                                                    FCS
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-4">
+                                <table width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label class="lableMargin" style="margin-top:20px">
+                                                    <input type="checkbox" ng-model="IPE"
+                                                           id="IPE" checked="checked">
+                                                    IPE
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <table width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label class="lableMargin" style="margin-top:20px">
+                                                    <input type="checkbox" ng-model="ST1"
+                                                           id="ST1" checked="checked">
+                                                    ST1
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-4">
+                                <table width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label class="lableMargin" style="margin-top:20px">
+                                                    <input type="checkbox" ng-model="CF"
+                                                           id="CF" checked="checked">
+                                                    CF
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-4">
+                                <table width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label class="lableMargin" style="margin-top:20px">
+                                                    <input type="checkbox" ng-model="ELS2"
+                                                           id="ELS2" checked="checked">
+                                                    ELS2
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <table width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label class="lableMargin" style="margin-top:20px">
+                                                    <input type="checkbox" ng-model="English1"
+                                                           id="English1" checked="checked">
+                                                    English 1
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-4">
+                                <table width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label class="lableMargin" style="margin-top:20px">
+                                                    <input type="checkbox" ng-model="DBMS1"
+                                                           id="DBMS1" checked="checked">
+                                                    DBMS 1
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-4">
+                                <table width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label class="lableMargin" style="margin-top:20px">
+                                                    <input type="checkbox" ng-model="DCCN1"
+                                                           id="DCCN1" checked="checked">
+                                                    DCCN 1
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <table width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label class="lableMargin" style="margin-top:20px">
+                                                    <input type="checkbox" ng-model="ITA"
+                                                           id="ITA" checked="checked">
+                                                    ITA
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+            <br />
+            <br />
+            <div class="row actionButtonFix">
+                <div class="col-md-4 col-md-offset-8 action-button-container">
+                    <button type="button" class="btn-small btn btn-xs btn-warning" id="clearData" ng-click="clearData()">Clear</button>
+                    <button type="button" class="btn-small btn btn-xs btn-primary" id="saveData" ng-click="saveData(1)">Save</button>
+
+                </div>
+            </div>
+            <!-- Sucess Alert Modal-->
+            <div class="modal fade " id="sucessModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" @*data-keyboard="false" data-backdrop="static"*@>
+                <div class="modal-dialog  modal-sm alert-box-position">
+                    <div class="modal-content">
+                        <div class="modal-header dialog-header-sucess">
+                            <h4 class="modal-title error-alert-header-text">Success!</h4>
+                        </div>
+                        <!-- dialog body -->
+                        @*<span class="modal-body " id="sucessMassageHeader"></span>*@
+                        <div class="modal-body">
+                            <div class="row col-md-12"><h3 id="sucessMassageHeader">Data Saved Successfully</h3></div>
+                            <div class="row col-md-12"><span id="sucessmessage"></span></div>
+                            @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+
+                        </div>
+                        <!-- dialog buttons -->
+                        <div class="modal-footer error-modal-footer ">
+                            <button type="button" data-dismiss="modal">Ok</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End-->
+            <!--Bootstrap warning modal-->
+            <div class="modal fade" id="errorModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+                <div class="modal-dialog modal-sm alert-box-position">
+                    <div class="modal-content">
+                        <div class="modal-header dialog-header-Warning">
+                            <h4 class="modal-title error-alert-header-text">Authorization error</h4>
+                        </div>
+                        <div class="modal-body" id="warningMessage">
+                            <p>Error occur Please check the connections</p>
+                        </div>
+                        <div class="modal-footer error-modal-footer">
+                            <button class="button" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+        <script src="~/Scripts/moment.js"></script>
+        <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+        <script src="~/Scripts/timepickerpop.js"></script>*@
+
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.2/jquery-ui.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>*@
+
+    <!-- CDN JavaScript Links-->
+    @*<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular-route.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular-animate.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular-animate.min.js"></script>*@
+
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="~/Areas/Admin/JavaScript/AdminViews/RepeatRegistration.js"></script>
+
+</body>
+</html>
+

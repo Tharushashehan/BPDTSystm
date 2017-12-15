@@ -1,0 +1,162 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>BPDTSystem</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/Areas/NLPFront/Content/Css/main.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.0/themes/default/style.min.css" rel="stylesheet" />
+    <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body>
+    <div ng-app="myapp" ng-controller="NLPFrontController">
+        <div ng-show="CheckUserAuth()">
+            <!-- Header -->
+            <section id="header">
+                <header>
+                    <img src="~/Content/BiZOOMLogo.png" />
+                    <h1 id="SearchLed">Ask a question</h1>
+                    <p @*ng-click="LogoutClicked()"*@>Ex: <b>What is the IT course fee?</b></p>
+                    @*<input id="TextField" name="TextField" type="text" style="width:380px;font-size:14pt;background: #fff;border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;" placeholder="Search.." name="TextField" id="TextField" ng-model="TextField" />*@
+                    <input class="w3-input w3-border" id="TextField" name="TextField" placeholder="Search.." ng-model="TextField"  type="text">
+                </header>
+                <footer>
+                    <a href="#banner" class="button style2 scrolly-middle" ng-click="NLPFrontClicked(1)">Search Answer</a>
+                </footer>
+            </section>
+
+            <!-- Banner -->
+            <section id="banner">
+                <header>
+                    <h2>Best match</h2>
+                </header>
+                <content>
+                 
+                @*<p ng-bind="AnswerString">
+        </p>*@
+               
+                    <p style="font-weight: bold; color:#060606" ng-bind="AnswerStringPara">
+        </p>
+                
+        </content>
+                    <footer>
+                        <a href="#TextField" class="button style2 scrolly">Ask another one</a>
+                    </footer>
+</section>
+
+
+
+            <!-- Contact -->
+            <article class="container box style3">
+                <header>
+                    <h2></h2>
+                    <p>
+                        If this isn't the answer you were looking for,
+                        please feel free to make a massage to our team admin.
+                        your question will be answered as soon as possible
+                    </p>
+                </header>
+                <form method="post" action="#SearchLed">
+                    <div class="row 50%">
+                        <div class="6u 12u$(mobile)"><input type="text" class="text" name="name" placeholder="Name" /></div>
+                        <div class="6u$ 12u$(mobile)"><input type="text" class="text" name="email" placeholder="Email" /></div>
+                        <div class="12u$">
+                            <textarea name="message" placeholder="Message"></textarea>
+                        </div>
+                        <div class="12u$">
+                            <ul class="actions">
+                                <li><input type="submit" value="Send Message" /></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </article>
+
+            <section id="footer">
+                <ul class="icons">
+                    <li><a href="#SearchLed" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#SearchLed" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="#SearchLed" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+                    <li><a href="#SearchLed" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+                    <li><a href="#SearchLed" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+                    <li><a href="#SearchLed" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                </ul>
+                <div class="copyright">
+                    <ul class="menu">
+                        <li>&copy; All rights reserved.</li>
+                        <li>Crafted By: Team BiZOOM</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!--Bootstrap warning modal-->
+            <!-- START -->
+            <div class="modal fade" id="errorModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+                <div class="modal-dialog modal-sm alert-box-position">
+                    <div class="modal-content">
+                        <div class="modal-header dialog-header-Warning">
+                            <h4 class="modal-title error-alert-header-text">Error Occur</h4>
+                        </div>
+                        <div class="modal-body" id="warningMessage">
+                            <p>Error occur Please check the connections</p>
+                        </div>
+                        <div class="modal-footer error-modal-footer">
+                            <button class="button" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END -->
+
+        </div>
+    </div>
+
+    <!--Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.2/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+    @*<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>*@
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+
+    <!-- CDN JavaScript Links-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    @*<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular-route.js"></script>*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular-animate.min.js"></script>
+
+
+    <script src="~/Areas/NLPFront/JavaScript/underscore-min.js"></script>
+
+    <script src="~/Areas/NLPFront/JavaScript/angular-nlp-compromise.js"></script>
+    <script src="~/Areas/NLPFront/JavaScript/JavaScript_compromise.min.js"></script>
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <!-- Scripts -->
+   
+
+    <script src="~/Areas/NLPFront/JavaScript/jquery.min.js"></script>
+    <script src="~/Areas/NLPFront/JavaScript/jquery.scrolly.min.js"></script>
+    <script src="~/Areas/NLPFront/JavaScript/jquery.poptrox.min.js"></script>
+    <script src="~/Areas/NLPFront/JavaScript/skel.min.js"></script>
+    <script src="~/Areas/NLPFront/JavaScript/util.js"></script>
+    <script src="~/Areas/NLPFront/JavaScript/main.js"></script>
+    <script src="~/Scripts/serverLinks.js"></script>
+    <script src="~/Areas/NLPFront/JavaScript/NLPFront.js"></script>
+
+</body>
+</html>

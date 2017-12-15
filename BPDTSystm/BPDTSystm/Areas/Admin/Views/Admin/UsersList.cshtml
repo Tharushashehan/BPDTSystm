@@ -1,0 +1,263 @@
+﻿
+@{
+    ViewBag.Title = "Users List";
+    Layout = "~/Areas/Admin/Views/Shared/Index.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.0/themes/default/style.min.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/Css/UserListTable.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div ng-app="myapp" ng-controller="UserListController">
+        <div ng-show="CheckUserAuth()">
+        <!--Course data entered here-->
+        <form name="ItemForm" novalidate>
+            <div class="row searchFix" style="padding-top:15px;">
+                <div class="col-xs-8 col-sm-4 col-md-3">
+                    <input type="text" class="form-control" placeholder="Search Items..." id="searchItem" name="searchItem" ng-model="searchItem" ng-keyup="searchItemItemAutoComplete()">
+                </div>
+            </div>
+            <br />
+            <div align="right">
+                <button type="button" class="btn-info" data-toggle="modal" data-target="#CreateUserNodal">Create User</button>
+            </div>
+
+            <br />
+            <div class="row content-body">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12 section-header">
+                            <small>User List Details</small>
+                        </div>
+                    </div>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td>
+                                <table class="table table-striped  table-condensed" id="AllUserListTableHeader">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-xs-2"><h5><b>Index_No</b></h5></td>
+                                            <td class="col-xs-2"><h5><b>Student_Name</b></h5></td>
+                                            <td class="col-xs-2"><h5><b>Student_Type</b></h5></td>
+                                            <td class="col-xs-2"><h5><b>Course</b></h5></td>
+                                            <td class="col-xs-4"><h5><b>Email</b></h5></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="div-table-content NPIMain-DetailsTableScroll" id="AllUserList">
+                                    <table class="table table-striped  table-condensed" id="AllUserListTable">
+                                        <tbody>
+                                            <tr ng-repeat="row in AllUserListCollection">
+
+                                                <td class="col-xs-2">{{row.Index_No}}</td>
+                                                <td class="col-xs-2">{{row.Student_Name}}</td>
+                                                <td class="col-xs-2">{{row.Student_Type}}</td>
+                                                <td class="col-xs-2">{{row.Course}}</td>
+                                                <td class="col-xs-4">{{row.Email}}</td>
+
+                                                @*<td class="col-xs-1">
+                                                        <button type="button"
+                                                                ng-click="removeRowNPIGroupList(row)"
+                                                                class="btn btn-xs btn-danger smart-button-remove">
+                                                            <i class="glyphicon glyphicon-remove">
+                                                            </i>
+                                                        </button>
+                                                    </td>*@
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </form>
+        <br />
+        <br />
+        <div class="row actionButtonFix">
+            <div class="col-md-4 col-md-offset-8 action-button-container">
+                @*<button type="button" class="btn-small btn btn-xs btn-warning" id="clearData" ng-click="clearData()">Clear</button>
+                    <button type="button" class="btn-small btn btn-xs btn-primary" id="saveData" ng-click="saveData(1)">Save</button>*@
+
+            </div>
+        </div>
+        <!-- Create user modal -->
+        <!--START-->
+        <div class="modal fade " name="CreateUserNodal" id="CreateUserNodal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" ng-click="GetAllUserData()">&times;</button>
+                        <h4 class="modal-title"> Create User </h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <table style="width: 100%;">
+                                        <tr>
+                                            <td>
+
+                                                <label class="lableMargin">Index_No</label>
+                                                <input class="form-control input-sm   required" type="text"
+                                                       id="Index_No" name="Index_No" ng-model="Index_No" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-md-6">
+                                    <table style="width: 100%;">
+                                        <tr>
+                                            <td>
+
+                                                <label class="lableMargin">Student_Name</label>
+                                                <input class="form-control input-sm   required" type="text"
+                                                       id="Student_Name" name="Student_Name" ng-model="Student_Name">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+
+                                            <label class="lableMargin">Course</label>
+                                            <input class="form-control input-sm   required" type="text"
+                                                   id="Course" name="Course" ng-model="Course">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+
+                                            <label class="lableMargin">Email</label>
+                                            <input class="form-control input-sm   required" type="text"
+                                                   id="Email" name="Email" ng-model="Email">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td>
+
+                                            <label class="lableMargin">Student_Type</label>
+                                            <input class="form-control input-sm   required" type="text"
+                                                   id="Student_Type" name="Student_Type" ng-model="Student_Type">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="row actionButtonFix">
+                                <div class="col-md-4 col-md-offset-8 action-button-container">
+                                    <button type="button" class="btn-small btn btn-xs btn-warning" id="clearData" ng-click="clearData()">Clear</button>
+                                    <button type="button" class="btn-small btn btn-xs btn-primary" id="saveData" ng-click="SaveData(2)">Save</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    <!--End-->
+                    <!-- Sucess Alert Modal-->
+                    <div class="modal fade " id="sucessModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" @*data-keyboard="false" data-backdrop="static"*@>
+                        <div class="modal-dialog  modal-sm alert-box-position">
+                            <div class="modal-content">
+                                <div class="modal-header dialog-header-sucess">
+                                    <h4 class="modal-title error-alert-header-text">Success!</h4>
+                                </div>
+                                <!-- dialog body -->
+                                @*<span class="modal-body " id="sucessMassageHeader"></span>*@
+                                <div class="modal-body">
+                                    <div class="row col-md-12"><h3 id="sucessMassageHeader">Data Saved Successfully</h3></div>
+                                    <div class="row col-md-12"><span id="sucessmessage"></span></div>
+                                    @*<button type="button" class="close" data-dismiss="modal">&times;</button>*@
+
+                                </div>
+                                <!-- dialog buttons -->
+                                <div class="modal-footer error-modal-footer ">
+                                    <button type="button" data-dismiss="modal">Ok</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End-->
+                    <!--Bootstrap warning modal-->
+                    <div class="modal fade" id="errorModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+                        <div class="modal-dialog modal-sm alert-box-position">
+                            <div class="modal-content">
+                                <div class="modal-header dialog-header-Warning">
+                                    <h4 class="modal-title error-alert-header-text">Error Occur</h4>
+                                </div>
+                                <div class="modal-body" id="warningMessage">
+                                    <p>Error occur Please check the connections</p>
+                                </div>
+                                <div class="modal-footer error-modal-footer">
+                                    <button class="button" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+                @*</div>*@
+                <!--Scripts-->
+                <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+                @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+                    <script src="~/Scripts/moment.js"></script>
+                    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+                    <script src="~/Scripts/timepickerpop.js"></script>*@
+
+                @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+                    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.11.2/jquery-ui.js"></script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+                    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.js"></script>
+
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>*@
+
+                <!-- CDN JavaScript Links-->
+                @*<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular-route.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular-animate.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.16/angular-animate.min.js"></script>*@
+
+                <script src="~/Scripts/modernizr-2.6.2.js"></script>
+                <script src="~/Areas/Admin/JavaScript/AdminViews/UsersList.js"></script>
+</body>
+</html>
+
